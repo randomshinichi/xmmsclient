@@ -37,7 +37,7 @@ class XMMSSync:
 				return ret
 			try:
 				_.__doc__ = attr.__doc__
-				_.func_name = '<sync version of %s>' % name
+				_.__name__ = '<sync version of %s>' % name
 			except:
 				pass
 			return _

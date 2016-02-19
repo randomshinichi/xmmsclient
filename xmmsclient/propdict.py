@@ -1,9 +1,9 @@
 #Py3k compat
 try:
-	a = basestring
+	a = str
 	del a
 except NameError:
-	basestring = (bytes, str)
+	str = (bytes, str)
 
 class PropDict(dict):
 	def __init__(self, srcs):
@@ -26,13 +26,13 @@ class PropDict(dict):
 			return False
 
 	def __contains__(self, item):
-		return self.has_key(item)
+		return item in self
 
 	def __getitem__(self, item):
 		try:
 			return dict.__getitem__(self, item)
 		except KeyError:
-			if isinstance(item, basestring):
+			if isinstance(item, str):
 				for src in self._sources:
 					if src.endswith('*'):
 						for k in self:
@@ -54,10 +54,10 @@ class PropDict(dict):
 	def _get_sources(self):
 		return self._sources
 	def _set_sources(self, val):
-		if isinstance(val, basestring):
+		if isinstance(val, str):
 			raise TypeError("Need a sequence of sources")
 		for i in val:
-			if not isinstance(i, basestring):
+			if not isinstance(i, str):
 				raise TypeError("Sources need to be strings")
 		self._sources = val
 	sources = property(_get_sources, _set_sources)

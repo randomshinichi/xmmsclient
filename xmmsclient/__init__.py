@@ -10,9 +10,9 @@ import xmmsapi, xmmsvalue
 from xmmsapi import XMMS, XMMSResult, userconfdir_get
 from xmmsvalue import XMMSValue
 from xmmsvalue import coll_parse
-from sync import XMMSSync, XMMSError
-from propdict import PropDict
-from consts import *
+from .sync import XMMSSync, XMMSError
+from .propdict import PropDict
+from .consts import *
 
 # Now, it is safe to remove the directory from the path.
 sys.path.remove(os.path.dirname(__file__))
