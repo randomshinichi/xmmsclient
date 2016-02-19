@@ -1,3 +1,4 @@
+setup.cfg
 setup.py
 xmmsapi.c
 xmmsvalue.c
