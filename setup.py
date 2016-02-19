@@ -29,10 +29,10 @@ ext_modules = [
 setup(
     name='xmmsclient',
     summary='Xmms2 native client',
-    version='0.8.1',
+    version='0.8.2',
     license='LGPL',
-    maintainer=u'Loïc Faure-Lacroix',
-    maintainer_email='lamerstar@gmail.com',
+    maintainer=u'Andrew Chiw',
+    maintainer_email='andrew.work0@gmail.com',
     packages=find_packages(),
     home_page='http://xmms2.org/wiki/Main_Page',
     ext_modules=ext_modules
